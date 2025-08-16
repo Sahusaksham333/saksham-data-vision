@@ -56,6 +56,9 @@
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Noise texture for subtle background effect */
+    --noise-opacity: 0.03;
   }
 }
 
@@ -118,5 +121,14 @@
 
   ::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--primary) / 0.8);
+  }
+
+  /* Noise texture utility class */
+  .bg-noise {
+    background-image: 
+      radial-gradient(circle at 20% 80%, transparent 20%, rgba(255,255,255,0.3) 21%, rgba(255,255,255,0.3) 22%, transparent 23%),
+      radial-gradient(circle at 80% 20%, transparent 20%, rgba(255,255,255,0.3) 21%, rgba(255,255,255,0.3) 22%, transparent 23%),
+      radial-gradient(circle at 40% 40%, transparent 20%, rgba(255,255,255,0.1) 21%, rgba(255,255,255,0.1) 22%, transparent 23%);
+    background-size: 30px 30px, 25px 25px, 40px 40px;
   }
 }
