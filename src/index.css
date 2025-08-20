@@ -2,63 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Portfolio Design System for Dark Theme with Green Accents */
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
 @layer base {
   :root {
-    /* Dark Theme Portfolio Colors */
-    --background: 0 0% 6.3%; /* Near black background */
-    --foreground: 0 0% 98%; /* Pure white text */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    --card: 0 0% 8%; /* Slightly lighter card background */
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    /* Vibrant Electric Green Primary */
-    --primary: 120 100% 50%; /* Electric green #00FF00 */
-    --primary-foreground: 0 0% 6.3%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 0 0% 12%; /* Dark gray for secondary elements */
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 0 0% 15%; /* Muted dark backgrounds */
-    --muted-foreground: 0 0% 65%; /* Light gray text */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 120 100% 50%; /* Green accent same as primary */
-    --accent-foreground: 0 0% 6.3%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 20%; /* Subtle borders */
-    --input: 0 0% 12%;
-    --ring: 120 100% 50%; /* Green focus rings */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
-    --radius: 0.75rem; /* Slightly more rounded */
+    --radius: 0.5rem;
 
-    /* Green Variants for Portfolio */
-    --green-glow: 120 100% 50%;
-    --green-subtle: 120 30% 15%;
-    --green-muted: 120 15% 25%;
-    
-    /* Professional Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(120 20% 8%));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(0 0% 10%));
-    --gradient-green: linear-gradient(135deg, hsl(120 100% 50%), hsl(120 80% 45%));
-    
-    /* Shadows with Green Glow */
-    --shadow-glow: 0 0 40px hsl(var(--green-glow) / 0.3);
-    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
-    --shadow-elegant: 0 20px 60px hsl(0 0% 0% / 0.5);
-    
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    
-    /* Noise texture for subtle background effect */
-    --noise-opacity: 0.03;
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -68,67 +100,6 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-@layer components {
-  /* Smooth scrolling animations */
-  .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-  }
-
-  .animate-on-scroll.in-view {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Hover effects */
-  .hover-lift {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-elegant);
-  }
-
-  /* Glowing text effect */
-  .text-glow {
-    text-shadow: 0 0 20px hsl(var(--green-glow) / 0.5);
-  }
-
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--background));
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary));
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary) / 0.8);
-  }
-
-  /* Noise texture utility class */
-  .bg-noise {
-    background-image: 
-      radial-gradient(circle at 20% 80%, transparent 20%, rgba(255,255,255,0.3) 21%, rgba(255,255,255,0.3) 22%, transparent 23%),
-      radial-gradient(circle at 80% 20%, transparent 20%, rgba(255,255,255,0.3) 21%, rgba(255,255,255,0.3) 22%, transparent 23%),
-      radial-gradient(circle at 40% 40%, transparent 20%, rgba(255,255,255,0.1) 21%, rgba(255,255,255,0.1) 22%, transparent 23%);
-    background-size: 30px 30px, 25px 25px, 40px 40px;
+    @apply bg-background text-foreground;
   }
 }
